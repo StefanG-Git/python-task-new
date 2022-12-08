@@ -17,6 +17,7 @@ RNR_COLUMN = "rnr"
 GRUPPE_COLUMN = "gruppe"
 LABEL_IDS_COLUMN = "labelIds"
 
+CSV_FILE_PATH = "resources/vehicles.csv"
 OUTPUT_DATA_PATH = f"output_data/vehicles_{TODAY.isoformat()}.xlsx".replace(":", ".")
 
 AUTH_URL = "https://api.baubuddy.de/index.php/login"
@@ -57,7 +58,7 @@ required_columns = add_unique_items_to_list(input_columns, RNR_COLUMN, GRUPPE_CO
 # Get data from API
 logger.info("Extracting data...")
 
-response = requests.post(url=API_URL, headers=API_HEADERS)
+response = requests.post(url=API_URL, headers=API_HEADERS, params={"csv_file_path": CSV_FILE_PATH})
 data = json.dumps(response.json())
 
 logger.info("Data extracted successfully!")

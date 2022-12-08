@@ -19,8 +19,9 @@ KURZNAME_COLUMN = "kurzname"
 
 @app.route("/api/data", methods=["POST"])
 def process_data():
-    # TODO edit csv receiving and add validation
-    local_data_df = pd.read_csv("resources/vehicles.csv", sep=";")
+    # Create DataFrame from the csv file
+    csv_file_path = request.args.get("csv_file_path")
+    local_data_df = pd.read_csv(csv_file_path, sep=";")
     # Download resource data
     resource_data = get_request_resource_as_json(url=RESOURCE_URL, headers=request.headers)
     # Create DataFrame from the resource data
