@@ -17,7 +17,7 @@ HU_COLUMN = "hu"
 KURZNAME_COLUMN = "kurzname"
 
 
-@app.route("/api/data", methods=["GET", "POST"])
+@app.route("/api/data", methods=["POST"])
 def process_data():
     # TODO edit csv receiving and add validation
     local_data_df = pd.read_csv("resources/vehicles.csv", sep=";")
