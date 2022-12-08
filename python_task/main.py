@@ -89,8 +89,6 @@ if LABEL_IDS_COLUMN in required_columns:
 if to_add_background_color:
     add_background_color_to_worksheet_cells(ws, HU_COLUMN, TODAY)
 
-logger.info("Data transformations ended!")
-
 # Save the data after the transformations as xlsx file
 logger.info("Saving data...")
 
