@@ -267,7 +267,7 @@ def get_color_code(
     """
 
     for label_id in label_ids:
-        if label_id == label_id:
+        if label_id is not None:
             current_url = f"{url}{label_id}"
             resource = get_request_resource_as_json(current_url, headers)
             try:
