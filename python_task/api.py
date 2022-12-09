@@ -1,7 +1,5 @@
-import json
-
 import pandas as pd
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 from utils.data_utils import *
 from utils.request_utils import get_request_resource_as_json
@@ -19,8 +17,8 @@ KURZNAME_COLUMN = "kurzname"
 
 @app.route("/api/data", methods=["POST"])
 def process_data():
-    # Create DataFrame from the csv file
     csv_file_path = request.args.get("csv_file_path")
+    # Create DataFrame from the csv file
     local_data_df = pd.read_csv(csv_file_path, sep=";")
     # Download resource data
     resource_data = get_request_resource_as_json(url=RESOURCE_URL, headers=request.headers)
@@ -40,7 +38,7 @@ def process_data():
     clean_df = drop_suffix_columns_from_df(clean_df, common_columns, SUFFIX)
 
     # Return merged and filtered data
-    return json.loads(clean_df.to_json(orient='records'))
+    return jsonify(clean_df.to_dict())
 
 
 if __name__ == '__main__':
