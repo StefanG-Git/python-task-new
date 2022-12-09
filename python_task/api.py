@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, request, jsonify
+from flask import Flask, request
 
 from utils.data_utils import *
 from utils.request_utils import get_request_resource_as_json
