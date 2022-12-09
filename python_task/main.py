@@ -48,6 +48,7 @@ parser = argparse.ArgumentParser(description="Enter required columns and whether
 parser.add_argument("-k", "--keys", type=str, nargs="+", required=True)
 parser.add_argument("-c", "--colored", type=lambda x: bool(util.strtobool(x)), default=True)
 
+# Extract input parameters
 args = parser.parse_args()
 input_columns = args.keys
 to_add_background_color = args.colored
