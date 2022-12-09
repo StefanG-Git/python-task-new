@@ -244,17 +244,17 @@ def write_data_from_pandas_dataframe_to_worksheet(
 
 
 def get_color_code(
-        label_ids: pd.Series,
+        label_ids: List,
         url: str,
-        headers=Dict[str, str]
+        headers: Dict[str, str]
 ) -> str | None:
     """
-    Extracts color code from API via request using values from array.
+    Extracts color code from API via request using values from List.
 
     Parameters
     ----------
     label_ids: pd.Series
-        Array containing the values.
+        List containing the values.
     url: str
         URL of the color codes.
     headers: Dict[str, str]
@@ -280,7 +280,7 @@ def get_color_code(
 
 
 def add_font_color_to_worksheet_cells(
-        label_ids: pd.Series,
+        label_ids: list,
         ws: openpyxl.worksheet.worksheet.Worksheet,
         url: str,
         headers: Dict[str, str]
@@ -291,8 +291,8 @@ def add_font_color_to_worksheet_cells(
 
     Parameters
     ----------
-    label_ids: pd.Series
-        Array containing the values.
+    label_ids: list
+        List containing the values.
     ws: openpyxl.worksheet.worksheet.Worksheet
         Worksheet with the data.
     url: str
