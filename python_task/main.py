@@ -60,12 +60,12 @@ required_columns = add_unique_items_to_list(input_columns, RNR_COLUMN, GRUPPE_CO
 logger.info("Extracting data...")
 
 response = requests.post(url=API_URL, headers=API_HEADERS, params={"csv_file_path": CSV_FILE_PATH})
-data = json.dumps(response.json())
+data = response.json()
 
 logger.info("Data extracted successfully!")
 
 # Create DataFrame from the data
-df = pd.read_json(data)
+df = pd.DataFrame(data)
 # Sort DataFrame by "gruppe" column
 sorted_df = sort_dataframe(df, GRUPPE_COLUMN, True)
 sorted_df = sorted_df.reset_index(drop=True)
