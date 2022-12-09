@@ -387,3 +387,26 @@ def add_background_color_to_worksheet_cells(
                 cell_header.fill = PatternFill(start_color=color_code, fill_type="solid")
 
     logger.info("Added background color to Worksheet.")
+
+
+def save_workbook(wb: openpyxl.Workbook, path_to_save: str) -> None:
+    """
+    Saves the Workbook to the given path as xlsx file.
+
+    Parameters
+    ----------
+    wb: openpyxl.Workbook
+        Workbook with the data.
+    path_to_save: str
+        Path to save the Workbook
+
+    Returns
+    -------
+    None
+    """
+    logger.info("Saving data...")
+
+    wb.save(path_to_save)
+    wb.close()
+
+    logger.info("Data saved successfully!")
