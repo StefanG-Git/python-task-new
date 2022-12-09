@@ -29,7 +29,13 @@ def process_data():
     # Remove the merge column from the common columns list
     common_columns.remove(KURZNAME_COLUMN)
     # Merge both DataFrames
-    merged_df = merge_dataframes(local_data_df, request_data_df, OUTER_MERGE, KURZNAME_COLUMN, ("", SUFFIX))
+    merged_df = merge_dataframes(
+        local_data_df,
+        request_data_df,
+        OUTER_MERGE,
+        KURZNAME_COLUMN,
+        ("", SUFFIX)
+    )
     # Filter rows where "hu" column is Null
     filtered_df = filter_rows_with_null_values_from_df(merged_df, HU_COLUMN)
     # Replace Null values from the duplicate column
