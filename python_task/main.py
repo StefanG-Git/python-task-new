@@ -92,9 +92,4 @@ if to_add_background_color:
     add_background_color_to_worksheet_cells(ws, HU_COLUMN, TODAY)
 
 # Save the data after the transformations as xlsx file
-logger.info("Saving data...")
-
-wb.save(OUTPUT_DATA_PATH)
-wb.close()
-
-logger.info("Data saved successfully!")
+save_workbook(wb, OUTPUT_DATA_PATH)
