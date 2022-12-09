@@ -44,7 +44,7 @@ def process_data():
     clean_df = drop_suffix_columns_from_df(clean_df, common_columns, SUFFIX)
 
     # Return merged and filtered data
-    return jsonify(clean_df.to_dict())
+    return clean_df.to_dict()
 
 
 if __name__ == '__main__':
