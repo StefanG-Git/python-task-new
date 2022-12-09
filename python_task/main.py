@@ -1,5 +1,4 @@
 import argparse
-import json
 from datetime import datetime
 from distutils import util
 
@@ -81,7 +80,7 @@ write_data_from_pandas_dataframe_to_worksheet(final_df, ws)
 # Tint the cell's text in workbook if "labelIds" is given in the input
 if LABEL_IDS_COLUMN in required_columns:
     add_font_color_to_worksheet_cells(
-        final_df[LABEL_IDS_COLUMN],
+        final_df[LABEL_IDS_COLUMN].to_list(),
         ws,
         COLOR_API_URL,
         API_HEADERS
