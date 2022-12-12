@@ -6,6 +6,7 @@ import openpyxl
 import pandas as pd
 import requests
 
+from utils.common_utils import add_unique_items_to_list
 from utils.data_utils import *
 from utils.request_utils import get_access_token
 

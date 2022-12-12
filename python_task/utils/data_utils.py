@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List, Any, Tuple, Dict
+from typing import List, Dict
 
 import openpyxl
 import pandas as pd
@@ -10,29 +10,6 @@ from logger import logger
 from utils.common_utils import get_color_code_by_number
 from utils.datetime_utils import *
 from utils.request_utils import get_request_resource_as_json
-
-
-def add_unique_items_to_list(unique_list: List[Any], *items: Any) -> List[Any]:
-    """
-    Adds items to list if they are not in the list
-
-    Parameters
-    ----------
-    unique_list : List[Any]
-        List with unique items.
-    items : Tuple[Any]
-        Items to add.
-
-    Returns
-    -------
-    unique_list : List[Any]
-        List + new unique items.
-    """
-    for item in items:
-        if item not in unique_list:
-            unique_list.append(item)
-
-    return unique_list
 
 
 def merge_dataframes(

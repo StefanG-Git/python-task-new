@@ -41,45 +41,6 @@ class DataUtilsTests(TestCase):
         self.first_df = pd.DataFrame(self._FIRST_DF_DATA)
         self.second_df = pd.DataFrame(self._SECOND_DF_DATA)
 
-    def test_add_unique_items_to_list__when_all_items_are_unique__expect_all_to_be_added(self):
-        # Arrange
-        expected_elements = ["value1", "value2", "value3", "value4", "value5", "value6"]
-        expected_elements_count = 6
-
-        # Act
-        new_list = add_unique_items_to_list(self._UNIQUE_LIST, "value5", "value6")
-        actual_elements_count = len(new_list)
-
-        # Assert
-        self.assertListEqual(expected_elements, new_list)
-        self.assertEqual(expected_elements_count, actual_elements_count)
-
-    def test_add_unique_items_to_list__when_not_all_items_are_unique__expect_to_add_unique_items_only(self):
-        # Arrange
-        expected_elements = ["value1", "value2", "value3", "value4", "value5", "value6"]
-        expected_elements_count = 6
-
-        # Act
-        new_list = add_unique_items_to_list(self._UNIQUE_LIST, "value1", "value2", "value5", "value6")
-        actual_elements_count = len(new_list)
-
-        # Assert
-        self.assertListEqual(expected_elements, new_list)
-        self.assertEqual(expected_elements_count, actual_elements_count)
-
-    def test_add_unique_items_to_list__when_duplicate_items__expect_no_change(self):
-        # Arrange
-        expected_elements = self._UNIQUE_LIST
-        expected_elements_count = 4
-
-        # Act
-        new_list = add_unique_items_to_list(self._UNIQUE_LIST, "value1", "value2")
-        actual_elements_count = len(new_list)
-
-        # Assert
-        self.assertListEqual(expected_elements, new_list)
-        self.assertEqual(expected_elements_count, actual_elements_count)
-
     def test_merge_dataframes__when_outer_merge_and_same_keys_count__expect_same_keys_and_new_columns(self):
         # Arrange
         expected_keys = [1, 2, 3, 4]
