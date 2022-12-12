@@ -14,7 +14,7 @@ Download a certain set of resources, merges them with CSV-transmitted resources,
 - The requirements.txt file should list all Python libraries that program depend on, and they will be installed using:
 
   `pip install -r requirements.txt`
-- The requirements.txt file should list all Python libraries that program depend on, and they will be installed using: 
+- Run the `api.py` file 
 - Run the `main.py` script via Command Line or Terminal by passing parameters:
   - `-k/--keys` arbitrary amount of string arguments, columns to include in the output file (columns `rnr` and `gruppe` will always be included)
   - `-c/--colored` boolean flag, to color each row in the output file depending on the date (`True` by default)
