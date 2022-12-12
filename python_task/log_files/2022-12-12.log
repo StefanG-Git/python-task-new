@@ -1,0 +1,13 @@
+2022-12-12 11:05:22,186: INFO - Extracting data...
+2022-12-12 11:05:23,326: INFO - DataFrames merged successfully!
+2022-12-12 11:05:23,326: INFO - Filtered Null values from hu column from DataFrame.
+2022-12-12 11:05:23,342: INFO - Replaced Null values in DataFrame.
+2022-12-12 11:05:23,342: INFO - Dropped redundant columns from DataFrame.
+2022-12-12 11:05:23,342: INFO - Data extracted successfully!
+2022-12-12 11:05:23,342: INFO - DataFrame sorted in ascending order by gruppe column.
+2022-12-12 11:05:23,342: INFO - Dropped mismatch columns from DataFrame.
+2022-12-12 11:05:23,342: INFO - Data written from DataFrame to Worksheet successfully!
+2022-12-12 11:05:23,342: INFO - Couldn't extract any color code.
+2022-12-12 11:05:23,358: INFO - Added background color to Worksheet.
+2022-12-12 11:05:23,358: INFO - Saving data...
+2022-12-12 11:05:23,358: INFO - Data saved successfully!
